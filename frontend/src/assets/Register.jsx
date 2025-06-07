@@ -14,7 +14,7 @@ const Register = () => {
   const fetchdata=async(e)=>{
     e.preventDefault()
     try {
-      const data = await axios.post(`http://localhost:1188/reg`,{email,password})
+      const data = await axios.post(`https://rec-application.onrender.com/reg`,{email,password})
       console.log(`${email} signup successfull`)
     } catch (error) {
       console.log(error)
