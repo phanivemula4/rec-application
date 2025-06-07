@@ -12,7 +12,7 @@ const Door = () => {
 
   const logout = async () => {
     try {
-      await axios.get(`http://localhost:1188/logo`, { withCredentials: true });
+      await axios.get(`https://rec-application.onrender.com/logo`, { withCredentials: true });
       navigate('/');
     } catch (error) {
       console.log(error);
@@ -21,7 +21,7 @@ const Door = () => {
 
   const fetchdata = async () => {
     try {
-      const data = await axios.get(`http://localhost:1188/dor`, { withCredentials: true });
+      const data = await axios.get(`https://rec-application.onrender.com/dor`, { withCredentials: true });
       setuemail(data.data.email);
     } catch (error) {
       console.log(error);
@@ -30,7 +30,7 @@ const Door = () => {
 
   const fetchphotos = async () => {
     try {
-      const data = await axios.get(`http://localhost:1188/publicphotos`, { withCredentials: true });
+      const data = await axios.get(`https://rec-application.onrender.com/publicphotos`, { withCredentials: true });
       setpuphotos(data.data.photos); 
     } catch (error) {
       console.log(error);
@@ -58,7 +58,7 @@ const Door = () => {
         {puphotos.map((m, index) => (
           <img
             key={index}
-            src={`http://localhost:1188/${m.address}`}
+            src={`https://rec-application.onrender.com/${m.address}`}
             alt="not available"
             className="photo-item"
           />
