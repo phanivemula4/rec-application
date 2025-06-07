@@ -12,6 +12,7 @@ const Message = require('./models/Message')
 const { createServer } = require('http');
 const { Server } = require("socket.io");
 const app = express();
+app.set('trust proxy', 1);
 const server = createServer(app);
 const io = new Server(server,{
   cors:{
@@ -28,12 +29,22 @@ app.use(cors({
   credentials: true
 }));
 
+// app.use(session({
+//   secret: process.env.SESSION_SECRET || 'fallback_secret',
+//   resave: false,
+//   saveUninitialized: false,
+//   store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
+//   cookie: { secure: false }
+// }));
 app.use(session({
   secret: process.env.SESSION_SECRET || 'fallback_secret',
   resave: false,
   saveUninitialized: false,
   store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
-  cookie: { secure: false }
+  cookie: {
+    secure: true, // IMPORTANT for HTTPS
+    sameSite: 'none' // IMPORTANT for cross-site cookies
+  }
 }));
 
 app.use(express.json());
@@ -92,6 +103,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 app.use('/uploads', express.static('uploads'));
+// app.use('/uploads', express.static('uploads'));
 
 mongoose.connect(process.env.DBID).then(() => {
   console.log("MongoDB connected successfully");
@@ -299,6 +311,19 @@ app.delete('/deletepost', async (req, res) => {
     console.log("post not deleted")
   }
 });
+// ✅ Add this just above server.listen
+app.get('/session-check', (req, res) => {
+  if (req.session.user) {
+    return res.json({ loggedIn: true, user: req.session.user });
+  } else {
+    return res.json({ loggedIn: false });
+  }
+});
+
+// server.listen(port, () => {
+//   console.log(`Server is running on port ${port}`);
+// });
+
 server.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
