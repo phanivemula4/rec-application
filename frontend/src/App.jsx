@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'; 
 import './App.css'
 import Register from './assets/Register'
-import Home from './assets/home';
+import Home from './assets/Home';
 import Login from './assets/Login';
 import Dashboard from './assets/Dashboard';
 import Door from './assets/Door';
