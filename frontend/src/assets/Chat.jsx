@@ -4,7 +4,7 @@ import axios from 'axios';
 import './Chat.css';
 
 
-const socket = io("http://localhost:1188", {
+const socket = io("https://rec-application.onrender.com", {
   withCredentials: true,
 });
 
@@ -150,7 +150,7 @@ const messagego = async (e) => {
       formdata.append('receiver', receiverEmail);
       formdata.append('context', trimmedMsg); // safe even if empty
 
-      await axios.post('http://localhost:1188/personalphotos', formdata, {
+      await axios.post('https://rec-application.onrender.com/personalphotos', formdata, {
         withCredentials: true,
         headers: { 'Content-Type': 'multipart/form-data' },
       });
