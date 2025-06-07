@@ -9,7 +9,7 @@ const Dashboard = () => {
   
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://localhost:1188/ldas', { withCredentials: true });
+      const response = await axios.get('https://rec-application.onrender.com/ldas', { withCredentials: true });
       setEmail(response.data.email);
       setEmails(response.data.emails);
     } catch (error) {
