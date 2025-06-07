@@ -92,7 +92,7 @@ const Account = () => {
         {prphotos.map((m, index) => (
           <div key={index} className="photo-item">
             <img
-              src={`http://localhost:1188/${m.address}`}
+              src={`https://rec-application.onrender.com/${m.address}`}
               alt="not available"
             />
             <button className="delete-btn" onClick={() => deletePost(m)}>×</button>
