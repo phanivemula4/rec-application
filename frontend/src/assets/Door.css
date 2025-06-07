@@ -1,0 +1,74 @@
+/* Container styling */
+.door-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+/* Greeting text */
+.door-container h1 {
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+/* Button group */
+.button-group {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.door-button {
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.3rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  min-width: 90px;
+}
+
+.door-button:hover {
+  background-color: #004999;
+}
+
+/* Posts message */
+.no-posts-message {
+  color: #777;
+  font-style: italic;
+  font-size: 1.25rem;
+  margin-top: 3rem;
+}
+
+/* Photos grid */
+.photos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* Individual photo */
+.photo-item {
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+  transition: transform 0.25s ease;
+  cursor: pointer;
+}
+
+.photo-item:hover {
+  transform: scale(1.05);
+}
