@@ -19,7 +19,7 @@ const Login = () => {
         }
         try {
             const response = await axios.post(
-                "http://localhost:1188/log",
+                "https://rec-application.onrender.com/log",
                 { email, password },
                 { withCredentials: true }
             );
