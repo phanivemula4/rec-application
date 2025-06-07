@@ -18,7 +18,7 @@ const Account = () => {
 
   const fetchphotos = async () => {
     try {
-      const data = await axios.get(`http://localhost:1188/privatephotos`, { withCredentials: true });
+      const data = await axios.get(`https://rec-application.onrender.com/privatephotos`, { withCredentials: true });
       setprphotos(data.data.photos);
     } catch (error) {
       console.log(error);
@@ -28,7 +28,7 @@ const Account = () => {
   const deletePost = async (post) => {
     try {
       // post.preventDefault()
-      await axios.delete('http://localhost:1188/deletepost', {
+      await axios.delete('https://rec-application.onrender.com/deletepost', {
         data: { address : post.address,
           sender : post.sender,
           access : post.access,
