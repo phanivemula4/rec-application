@@ -48,7 +48,7 @@ const Account = () => {
       formData.append('photo', photo);
       formData.append('access', access);
 
-      await axios.post('http://localhost:1188/acc', formData, {
+      await axios.post('https://rec-application.onrender.com/acc', formData, {
         withCredentials: true,
         headers: { 'Content-Type': 'multipart/form-data' },
       });
