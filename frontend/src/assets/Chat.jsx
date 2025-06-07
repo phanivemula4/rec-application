@@ -186,7 +186,7 @@ const messagego = async (e) => {
                 {m.context && <p>{m.context}</p>}
                 {m.image && (
                   <img
-                    src={`http://localhost:1188/${m.image}`}
+                    src={`https://rec-application.onrender.com/${m.image}`}
                     alt="sent"
                     style={{ maxWidth: "100%", borderRadius: "5px", marginTop: "5px" }}
                   />
